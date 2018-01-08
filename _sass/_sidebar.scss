@@ -1,0 +1,70 @@
+/* menu box */
+#menu-open {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
+    color: #505050;
+    text-align: center;
+    cursor: pointer;
+    svg {
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+    }
+}
+/* sidebar styles */
+#side-menu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 98;
+    width: 65%;
+    transition: all .3s ease-in-out;
+    background: $menu-background;
+    border-radius: 0 0 5px 0;
+    padding-left: 55px;
+    a {
+        text-decoration: none;
+        color: $menu-link-color;
+    }
+    .menu-title {
+        padding: 1rem;
+        border-top: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .menu-item {
+        padding: .5rem 1rem;
+        border-top: 1px solid rgba(255,255,255,.1);
+        display: block;
+    }
+    /*
+    @media (min-width: 48em) {
+  .sidebar-item {
+    padding: 1.5rem;
+  }
+  .sidebar-nav-item {
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+  }
+}*/
+    .active {
+        text-decoration: none;
+        background-color: rgba(255,255,255,.1);
+        border-color: transparent;
+    }
+    /* chapter styles */
+    .chapter {
+        cursor: pointer;
+    }
+    .chapter-contents {
+        display: none;
+    }
+    .active-chapter {
+        .chapter-contents {
+            display: block;
+        }
+    }
+
+}

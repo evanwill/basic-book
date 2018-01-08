@@ -1,0 +1,55 @@
+/* index page link buttons */
+.index-buttons li {
+    list-style: none;
+    display: inline-block;
+    border: solid 1px $link-color;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 4px 2px 2px 2px;
+}
+/* chapter navigation */
+#chapter-nav {
+    color: $grey-color;
+    font-size: 16px;
+    text-align: right;
+    line-height: 1.25;
+    a { color: $grey-color; }
+}
+#chapter-buttons {
+    display: block;
+    margin: 2rem auto 0;
+    border-top: solid 1px $grey-color;
+    a { 
+        color: $grey-color;
+        display: inline-block;
+        width: 100%;
+    }
+    .lesson-nav {
+        display: inline-block;
+        width: 50%;
+        padding: 2px 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .prev { 
+        float: left;
+        border-right: solid 1px $grey-color;
+    }
+    .next { 
+        float: right;
+        border-left: solid 1px $grey-color;
+    }
+}
+#chapter-buttons:after {
+    content: "";
+    display: table;
+    clear: both;    
+}
+/* forum */
+.forum-help {
+    font-size: 14px;
+    color: #7a7a7a;
+    text-align: center;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+}

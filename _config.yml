@@ -1,0 +1,55 @@
+# basic-book
+# jekyll theme for web-book, designed for OER textbook, by Evan Will
+# originally inspired by Lanyon, https://github.com/poole/lanyon
+
+# site info
+title: basic-book
+tagline: OER Text Book
+description: "an open jekyll theme designed for OER textbook"
+keywords: OER, textbook, university of idaho, jekyll
+
+# book info
+authors: [Evan Williamson, Second Author]
+email: evanpeterw@gmail.com
+published: 2018
+
+# urls
+url: https://evanwill.github.io
+baseurl: /basic-book
+github-repo: https://github.com/evanwill/basic-book
+
+# defaults
+defaults:
+  - scope:
+      path: "chapters"
+    values:
+      layout: chapter
+
+# jekyll collections
+# each unit/chapter of the book is a collection, 
+# thus each unit is a directory containing the content documents for that chapter
+# name the directory with underscore and number to ensure proper sort, e.g. _01_one
+# each unit collection must have a name value (used in TOC) and `output: true`
+collections_dir: chapters
+collections:
+  01-one:
+    name: "Chapter One: Intro"
+    output: true
+  02-two:
+    name: "Chapter Two: New Discoveries"
+    output: true
+  03-three:
+    name: "Chapter Three: Digging Deeper"
+    output: true
+  04-four:
+    name: "Chapter Four: Great Content"
+    output: true
+  05-five:
+    name: "Chapter Five: Further Practice"
+    output: true
+# ignore stuff
+exclude: [docs]
+
+# output settings
+sass:
+    style: compressed

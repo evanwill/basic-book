@@ -1,0 +1,42 @@
+---
+# full css
+---
+
+@font-face {
+  font-family: 'Noto Sans';
+  src:  url('fonts/noto_sans/NotoSans-Regular-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Charterregular';
+  src: url('fonts/charter/charter_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* fonts */
+$base-font-family: 'charterregular', Georgia, "Times New Roman", serif;
+// $base-font-family: "PT Serif", Georgia, "Times New Roman", serif;
+$h-font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+//$h-font-family: "PT Sans", Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$desktop-font-size: 20px;
+$mobile-font-size: 20px;
+$base-line-height: 1.5;
+$text-color: #515151;
+$h-color: #313131;
+
+/* colors */
+$background-color: #fff;
+$link-color: #6a9fb5;
+$grey-color: #c0c0c0;
+
+$menu-background: #6a9fb5;
+$menu-link-color: #fff;
+
+// Import partials.
+@import
+  "base",
+  "layout",
+  "sidebar",
+  "book"
+;
