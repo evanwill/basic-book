@@ -30,7 +30,7 @@ defaults:
 # thus each unit is a directory containing the content documents for that chapter
 # name the directory with underscore and number to ensure proper sort, e.g. _01_one
 # each unit collection must have a name value (used in TOC) and `output: true`
-collections_dir: chapters
+# collections_dir: chapters # not supported on gh-pages yet
 collections:
   01-one:
     name: "Chapter One: Intro"
