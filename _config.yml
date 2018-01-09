@@ -51,6 +51,9 @@ collections:
   05-five:
     name: "Chapter Five: Further Practice"
     output: true
+  assignments:
+    name: "Assignments"
+    output: true
 
 # ignore stuff
 exclude: [docs]

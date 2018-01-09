@@ -7,7 +7,7 @@ title: basic-book
 <ul class="index-buttons">
 <li><a href="{{ "/about.html" | absolute_url }}">About</a></li>
 <li><a href="{{ "/toc.html" | absolute_url }}">Table of contents</a></li>
-<li><a href="{{ "/forum/" | absolute_url }}">Forum</a></li>
+<li><a href="{{ "/forum/index.html" | absolute_url }}">Assignments &amp; Forum</a></li>
 <li><a href="{{ "/search/" | absolute_url }}">Search</a></li>
 </ul>
 
