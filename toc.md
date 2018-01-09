@@ -1,6 +1,5 @@
 ---
 title: Table of Contents
-layout: page
 ---
 
 <ul class="index-buttons">

@@ -21,9 +21,13 @@ github-repo: https://github.com/evanwill/basic-book
 # defaults
 defaults:
   - scope:
-      path: "chapters"
+      path: ""
     values:
       layout: chapter
+  - scope: 
+      type: "pages"
+    values: 
+      layout: page
 
 # jekyll collections
 # each unit/chapter of the book is a collection, 
@@ -47,6 +51,7 @@ collections:
   05-five:
     name: "Chapter Five: Further Practice"
     output: true
+
 # ignore stuff
 exclude: [docs]
 
