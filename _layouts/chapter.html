@@ -18,7 +18,7 @@ layout: default
 {% endfor %}
 <div class="container content">
 <div id="chapter-nav">
-  <p><a href="{{ site.baseurl }}/toc.html#{{ chap_info.label }}">Chapter {{ chap_info.name }}</a><br>
+  <p><a href="{{ site.baseurl }}/toc.html#{{ chap_info.label }}">{{ chap_info.name }}</a><br>
   {% if prevurl %}<a href="{{ prevurl | prepend: site.baseurl }}" class="prev"> ❮ {{ prevtitle }}</a> |<br>{% endif %}
   {% if nexturl %}<a href="{{ nexturl | prepend: site.baseurl }}" class="nxt">{{nexttitle }} ❯</a>{% endif %}</p>
 </div>
@@ -32,6 +32,7 @@ layout: default
     {% if prevurl %}<div class="lesson-nav prev">
         <a href="{{ prevurl | absolute_url }}"> ❮ Previous</a>
     </div>{% endif %}
+    <div class="lesson-nav toc"><a href="{{ "/toc.html" | absolute_url }}">toc</a></div>
     {% if nexturl %}<div class="lesson-nav next">
         <a href="{{ nexturl | absolute_url }}" >Next ❯</a>
     </div>{% endif %}

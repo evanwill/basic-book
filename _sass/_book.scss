@@ -19,6 +19,7 @@
     display: block;
     margin: 2rem auto 0;
     border-top: solid 1px $grey-color;
+    text-align: center;
     a { 
         color: $grey-color;
         display: inline-block;
@@ -26,18 +27,21 @@
     }
     .lesson-nav {
         display: inline-block;
-        width: 50%;
         padding: 2px 5px;
         font-size: 16px;
-        text-align: center;
     }
     .prev { 
         float: left;
+        width: 44%;
         border-right: solid 1px $grey-color;
     }
     .next { 
         float: right;
+        width: 44%;
         border-left: solid 1px $grey-color;
+    }
+    .toc {
+        width: 12%;
     }
 }
 #chapter-buttons:after {
