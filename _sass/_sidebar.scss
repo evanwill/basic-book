@@ -1,33 +1,55 @@
-/* menu box */
-#menu-open {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 99;
-    color: #505050;
-    text-align: center;
-    cursor: pointer;
-    svg {
-        width: 40px;
-        height: 40px;
-        padding: 3px;
+/* new */
+.site-nav {
+    /* hide checkbox */
+    .nav-trigger {
+        display: none;
     }
-}
-/* sidebar styles */
-#side-menu {
-    display: none;
+    /* locate sidebar */
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 98;
-    width: 65%;
+    background-color: $background-color;
+
+    /* style menu icon */
+    label[for="nav-trigger"] {
+      display: block;
+      float: left;
+      width: 40px;
+      height: 40px;
+      //z-index: 2;
+      cursor: pointer;
+    }
+    .menu-icon {
+      display: block;
+      width: 40px;
+      height: 40px;
+      padding: 13px;
+      line-height: 0;
+      text-align: center;
+      > svg path {
+        fill: #505050;//$grey-color-dark;
+      }
+    }
+    /* use css to hide or show menu via checkbox */
+    input ~ .trigger {
+      //clear: both;
+      display: none;
+    }
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+}
+
+/* sidebar styles */
+#side-menu {
     transition: all .3s ease-in-out;
     background: $menu-background;
-    border-radius: 0 0 5px 0;
     padding-left: 55px;
     a {
         text-decoration: none;
         color: $menu-link-color;
+        border-radius: 0px;
     }
     .menu-title {
         padding: 1rem;
@@ -39,16 +61,7 @@
         border-top: 1px solid rgba(255,255,255,.1);
         display: block;
     }
-    /*
-    @media (min-width: 48em) {
-  .sidebar-item {
-    padding: 1.5rem;
-  }
-  .sidebar-nav-item {
-    padding-left:  1.5rem;
-    padding-right: 1.5rem;
-  }
-}*/
+    /* highlight current location */
     .active {
         text-decoration: none;
         background-color: rgba(255,255,255,.1);
@@ -60,6 +73,9 @@
     }
     .chapter-contents {
         display: none;
+    }
+    div.chapter:hover ul {
+        display: block;
     }
     .active-chapter {
         .chapter-contents {
