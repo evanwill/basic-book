@@ -40,7 +40,25 @@
       padding-bottom: 5px;
     }
 }
-
+/* chapter test */
+.chapters {
+    .chapter-trigger {
+        display: none;
+    }
+    label {
+        display: block;
+        cursor: pointer;
+      }
+    /* use css to hide or show menu via checkbox */
+    input ~ .chapter-contents {
+        //clear: both;
+        display: none;
+      }
+      input:checked ~ .chapter-contents {
+        display: block;
+        padding-bottom: 5px;
+      }
+}
 /* sidebar styles */
 #side-menu {
     transition: all .3s ease-in-out;
@@ -71,12 +89,12 @@
     .chapter {
         cursor: pointer;
     }
-    .chapter-contents {
+    /*.chapter-contents {
         display: none;
     }
     div.chapter:hover ul {
         display: block;
-    }
+    }*/
     .active-chapter {
         .chapter-contents {
             display: block;
