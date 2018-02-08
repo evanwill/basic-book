@@ -22,13 +22,14 @@ $base-font-size: 16px;
 $desktop-font-size: 20px;
 $mobile-font-size: 20px;
 $base-line-height: 1.5;
-$text-color: #515151;
+$text-color: #111; //#515151;
 $h-color: #313131;
 
 /* colors */
-$background-color: #fff;
-$link-color: #6a9fb5;
-$grey-color: #c0c0c0;
+$background-color: #fdf7ef; //#fff;
+$link-color: #0388a6; //#6a9fb5;
+$grey-color: #828282; //#c0c0c0;
+$grey-color-light: lighten($grey-color, 40%);
 
 $menu-background: #6a9fb5;
 $menu-link-color: #fff;
