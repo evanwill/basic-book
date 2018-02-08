@@ -1,44 +1,42 @@
-/* new */
+/* side bar */
 .site-nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: $background-color;    
     /* hide checkbox */
     .nav-trigger {
         display: none;
     }
-    /* locate sidebar */
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: $background-color;
-
     /* style menu icon */
     label[for="nav-trigger"] {
-      display: block;
-      float: left;
-      width: 40px;
-      height: 40px;
-      //z-index: 2;
-      cursor: pointer;
+        display: block;
+        float: left;
+        width: 40px;
+        height: 40px;
+        //z-index: 2;
+        cursor: pointer;
     }
     .menu-icon {
-      display: block;
-      width: 40px;
-      height: 40px;
-      padding: 13px;
-      line-height: 0;
-      text-align: center;
-      > svg path {
-        fill: #505050;//$grey-color-dark;
-      }
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 13px;
+        line-height: 0;
+        text-align: center;
+        > svg path {
+            fill: #505050;//$grey-color-dark;
+        }
     }
     /* use css to hide or show menu via checkbox */
-    input ~ .trigger {
-      //clear: both;
-      display: none;
+    input ~ #side-menu {
+        //clear: both;
+        display: none;
     }
-    input:checked ~ .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
+    input:checked ~ #side-menu {
+        display: block;
+        padding-bottom: 5px;
+    }    
 }
 /* chapter test */
 .chapters {
@@ -49,7 +47,7 @@
         display: block;
         cursor: pointer;
       }
-    /* use css to hide or show menu via checkbox */
+    /* use css to hide or show via checkbox */
     input ~ .chapter-contents {
         //clear: both;
         display: none;
@@ -89,12 +87,6 @@
     .chapter {
         cursor: pointer;
     }
-    /*.chapter-contents {
-        display: none;
-    }
-    div.chapter:hover ul {
-        display: block;
-    }*/
     .active-chapter {
         .chapter-contents {
             display: block;

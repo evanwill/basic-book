@@ -34,25 +34,25 @@ defaults:
 
 # jekyll collections
 # each unit/chapter of the book is a collection, 
-# thus each unit is a directory containing the content documents for that chapter
+# thus each unit is a directory containing the content documents for that unit
 # name the directory with underscore and number to ensure proper sort, e.g. _01_one
 # each unit collection must have a name value (used in TOC) and `output: true`
 # collections_dir: chapters # not supported on gh-pages yet
 collections:
   01-one:
-    name: "Chapter One: Intro"
+    name: "Unit One: Intro"
     output: true
   02-two:
-    name: "Chapter Two: New Discoveries"
+    name: "Unit Two: New Discoveries"
     output: true
   03-three:
-    name: "Chapter Three: Digging Deeper"
+    name: "Unit Three: Digging Deeper"
     output: true
   04-four:
-    name: "Chapter Four: Great Content"
+    name: "Unit Four: Great Content"
     output: true
   05-five:
-    name: "Chapter Five: Further Practice"
+    name: "Unit Five: Further Practice"
     output: true
   assignments:
     name: "Assignments"
