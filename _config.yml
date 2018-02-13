@@ -2,8 +2,9 @@
 # jekyll theme for web-book, designed for OER textbook, by Evan Will
 # originally inspired by Lanyon, https://github.com/poole/lanyon
 
-# Note: use environment variable on build command to include disqus and analytics
-# JEKYLL_ENV=production jekyll build
+# Notes: 
+# - figure include for centered images, put file in images directory and use: {% include figure.html file="my-cat.jpg" alt="cat" caption="My cat" width="50%" %}
+# - use environment variable on build command to include analytics: JEKYLL_ENV=production jekyll build
 
 # site info
 title: basic-book
