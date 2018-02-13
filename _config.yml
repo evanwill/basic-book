@@ -3,7 +3,7 @@
 # originally inspired by Lanyon, https://github.com/poole/lanyon
 
 # Notes: 
-# - figure include for centered images, put file in images directory and use: {% include figure.html file="my-cat.jpg" alt="cat" caption="My cat" width="50%" %}
+# - figure include for centered images, put file in assets/images directory and use: {% include figure.html file="my-cat.jpg" alt="cat" caption="My cat" width="50%" %}
 # - use environment variable on build command to include analytics: JEKYLL_ENV=production jekyll build
 
 # site info
