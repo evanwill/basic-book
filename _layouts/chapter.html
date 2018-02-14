@@ -17,26 +17,28 @@ layout: default
 {% assign prev = links %}
 {% endfor %}
 <div class="container content">
-<div id="chapter-nav">
-  <p><a href="{{ site.baseurl }}/toc.html#{{ chap_info.label }}">{{ chap_info.name }}</a><br>
-  {% if prevurl %}<a href="{{ prevurl | prepend: site.baseurl }}" class="prev"> ❮ {{ prevtitle }}</a> |<br>{% endif %}
-  {% if nexturl %}<a href="{{ nexturl | prepend: site.baseurl }}" class="nxt">{{nexttitle }} ❯</a>{% endif %}</p>
-</div>
-
-<div class="page">
-
-  <h1 class="page-title">{{ page.title }}</h1>
-  {{ content }}
-
-  <div id="chapter-buttons">
-    {% if prevurl %}<div class="lesson-nav prev">
-        <a href="{{ prevurl | absolute_url }}"> ❮ Previous</a>
-    </div>{% endif %}
-    <div class="lesson-nav toc"><a href="{{ "/toc.html" | absolute_url }}">toc</a></div>
-    {% if nexturl %}<div class="lesson-nav next">
-        <a href="{{ nexturl | absolute_url }}" >Next ❯</a>
-    </div>{% endif %}
+  <div id="chapter-nav">
+    <p><a href="{{ site.baseurl }}/toc.html#{{ chap_info.label }}">{{ chap_info.name }}</a><br>
+    {% if prevurl %}<a href="{{ prevurl | prepend: site.baseurl }}" class="prev"> ❮ {{ prevtitle }}</a> |<br>{% endif %}
+    {% if nexturl %}<a href="{{ nexturl | prepend: site.baseurl }}" class="nxt">{{nexttitle }} ❯</a>{% endif %}</p>
   </div>
 
-</div>
+  <div class="page">
+
+    <article>
+      <h1 class="page-title">{{ page.title }}</h1>
+      {{ content }}
+    </article>
+
+    <div id="chapter-buttons">
+      {% if prevurl %}<div class="lesson-nav prev">
+          <a href="{{ prevurl | absolute_url }}"> ❮ Previous</a>
+      </div>{% endif %}
+      <div class="lesson-nav toc"><a href="{{ "/toc.html" | absolute_url }}">toc</a></div>
+      {% if nexturl %}<div class="lesson-nav next">
+          <a href="{{ nexturl | absolute_url }}" >Next ❯</a>
+      </div>{% endif %}
+    </div>
+
+  </div>
 </div>
