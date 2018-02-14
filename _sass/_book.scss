@@ -52,6 +52,14 @@
     display: table;
     clear: both;    
 }
+article {
+    ::-moz-selection {
+        background: yellow;
+    }
+    ::selection {
+        background: yellow;
+    }
+}
 /* forum */
 .forum-help {
     font-size: 14px;
