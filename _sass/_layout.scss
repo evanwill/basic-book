@@ -50,6 +50,7 @@
 .wrap {
     //position: relative;
     width: 100%;
+    border-top: solid 5px $border-color;
   }
   
   /* Container - Center the page content. */
@@ -72,7 +73,7 @@
     padding-top:    1rem;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $border-color;
   }
   .masthead-title {
     margin-top: 0;

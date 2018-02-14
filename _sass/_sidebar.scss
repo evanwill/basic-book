@@ -16,6 +16,7 @@
         height: 40px;
         //z-index: 2;
         cursor: pointer;
+        border-top: solid 5px $border-color;
     }
     .menu-icon {
         display: block;
@@ -36,9 +37,10 @@
     input:checked ~ #side-menu {
         display: block;
         padding-bottom: 5px;
-    }    
+    }
+    input:checked ~ label { border: none; }    
 }
-/* chapter test */
+/* chapter contents */
 .chapters {
     .chapter-trigger {
         display: none;
