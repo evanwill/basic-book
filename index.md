@@ -2,7 +2,7 @@
 title: basic-book
 ---
 
-*basic-book* is an [open-source]({{ site.github-repo }}), interactive, online textbook jekyll theme.
+`basic-book` is an [open-source]({{ site.github-repo }}), interactive, online textbook jekyll theme.
 
 <ul class="index-buttons">
 <li><a href="{{ "/about.html" | absolute_url }}">About</a></li>

@@ -3,61 +3,76 @@ layout: page
 title: Search
 ---
 
-This page provides a basic search of book content.
-*Note: it may take a few seconds to load!* 
-(p.s. you can also try [Google CSE]({{ "/search/google.html" | absolute_url }}))
+<input type="text" id="search" class="search-form" placeholder="Enter your search term..." aria-label="search">
 
-<script src="https://unpkg.com/lunr/lunr.js"></script>
-
-<input type="text" size="15" id="lunr-search" placeholder="Search..." aria-label="search">
-<input class="button-all" type="button" onclick="lunr_search();" value=" Search ">
-
-<ul id="search-results"></ul>
+<table id="results"></table>
 
 <hr>
 
-Built using [Lunr.js](https://lunrjs.com/).
+This page provides a basic fuzzy search of book content powered by [Lunr.js](https://lunrjs.com/)
+(p.s. you can also try [Google CSE]({{ "/search/google.html" | absolute_url }})).
+*Note: it may take a few seconds to load!* 
 
+> Lunr Search Operators:
+> 
+> - Specific fields (e.g. title:foo, text:foo)
+> - Wildcards (e.g. foo*, *oo)
+> - Fuzzy match, helps with misspelling (e.g. foo~1)
+> - Boost term (e.g. foo^10)
+
+<script src="{{ '/assets/js/lunr.min.js' | absolute_url }}"></script>
+<script src="{{ '/assets/js/lunr-store.js' | absolute_url }}"></script>
 <script>
-// add documents
-var documents = { 
-    {% for post in site.documents %}
-    "{{ post.url | absolute_url | xml_escape }}": 
-    { 
-      "url": "{{ post.url | absolute_url | xml_escape }}",
-      "title": "{{ post.title | xml_escape }}",
-      "text": {{ post.content | strip_html | jsonify | replace: "\n"," " }}
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-};
-// create index
+/* initialize lunr */
 var idx = lunr(function () {
-  this.ref('url')
+  this.ref('id')
   this.field('title')
   this.field('text')
-  for (var key in documents) {
-    this.add(documents[key])
+
+  //this.pipeline.remove(lunr.trimmer)
+
+  for (var item in store) {
+    this.add({
+      title: store[item].title,
+      text: store[item].text,
+      id: item
+    })
   }
 });
-// do search
-function displayResults(results) {
-  var searchResults = document.getElementById('search-results');
-  if (results.length) { // Are there any results?
-    var appendString = '';
-    for (var i = 0; i < results.length; i++) {  // Iterate over the results
-      var link = results[i].ref;
-      var title = documents[results[i].ref].title;
-      var preview = documents[results[i].ref].text.substring(0,150);
-      appendString += '<li><a href="' + link + '">' + title + '</a><br>' + preview + '... </li>';
-    }
-    searchResults.innerHTML = appendString;
-  } else {
-    searchResults.innerHTML = '<li>No results found</li>';
+
+var searchInput = document.getElementById('search');
+searchInput.onkeyup = function() {
+  /* lunr search function */
+  var query = document.getElementById('search').value;
+  var resultdiv = document.getElementById('results');
+  /* basic search that supports operators */
+  var result = idx.search(query); 
+  /* more fuzzy search, but doesn't support operators:
+  var result =
+    idx.query(function (q) {
+      query.split(lunr.tokenizer.separator).forEach(function (term) {
+        q.term(term, { boost: 100 })
+        if(query.lastIndexOf(" ") != query.length-1){
+          q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+        }
+        if (term != ""){
+          q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+        }
+      })
+    });*/
+  resultdiv.innerHTML = "";
+  resultdiv.innerHTML = '<p class="">' + result.length + ' Result(s) found</p>';
+  for (var item in result) {
+    var ref = result[item].ref;
+    var searchitem =
+      '<tr>'+
+          '<td class="">' +
+            '<p class=""><a href="{{ site.baseurl }}' + store[ref].url + '">' + store[ref].title+ '</a></p>' +
+            '<p class="">' +
+            store[ref].text.substring(0,150) + '... </p></td>' +
+      '</tr>';
+    resultdiv.innerHTML += searchitem;
   }
 }
-function lunr_search() {
-    var query = document.getElementById("lunr-search").value;
-    var results = idx.search(query);
-    displayResults(results);
-}
+
 </script>
