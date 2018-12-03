@@ -1,21 +1,22 @@
 ---
 layout: default
 ---
-{% assign chap_info = site.collections | where: "label", page.collection | first%}
+{% assign chap_info = site.collections | where: "label", page.collection | first %}
 {% for links in chap_info.docs %}
-{% if links.title == page.title %}
+{% if links.url == page.url %}
 {% unless forloop.first %}
-  {% assign prevurl = prev.url %}
-  {% assign prevtitle = prev.title %}
+{% assign back = forloop.index0 | minus: 1 %}
+{% assign prevurl = chap_info.docs[back].url %}
+{% assign prevtitle = chap_info.docs[back].title %}
 {% endunless %}
 {% unless forloop.last %}
-  {% assign next = chap_info.docs[forloop.index] %}
-  {% assign nexturl = next.url %}
-  {% assign nexttitle = next.title %}
+{% assign forward = forloop.index0 | plus: 1 %}
+{% assign nexturl = chap_info.docs[forward].url %}
+{% assign nexttitle = chap_info.docs[forward].title %}
 {% endunless %}
+{% break %}
 {% endif %}
-{% assign prev = links %}
-{% endfor %}
+{%- endfor -%}
 <div class="container content">
   <div id="chapter-nav">
     <p><a href="{{ site.baseurl }}/toc.html#{{ chap_info.label }}">{{ chap_info.name }}</a><br>
@@ -34,7 +35,7 @@ layout: default
       {% if prevurl %}<div class="lesson-nav prev">
           <a href="{{ prevurl | absolute_url }}"> ❮ Previous</a>
       </div>{% endif %}
-      <div class="lesson-nav toc"><a href="{{ "/toc.html" | absolute_url }}">toc</a></div>
+      <div class="lesson-nav toc"><a href="{{ '/toc.html' | absolute_url }}">toc</a></div>
       {% if nexturl %}<div class="lesson-nav next">
           <a href="{{ nexturl | absolute_url }}" >Next ❯</a>
       </div>{% endif %}
